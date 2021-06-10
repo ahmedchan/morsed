@@ -1,0 +1,68 @@
+
+//// colors
+$primaryColor: #1bac3f;
+$accentColor: #FFC400;
+$borderColor: #e2e2e2;
+$grayColor: #cccccc;
+$lightGrayColor: #f0f0f0;
+$mutedColor : #919d95;
+$textColor: #444444;
+$bgColor:#FFFFFF;
+
+$evenColor:#fafafa;
+$oddColor:#FFFFFF;
+
+$white: #FFFFFF;
+$black: #000000;
+
+
+/// media
+$mobile : 768px;
+
+
+//// fonts
+$primaryFont: 'Cairo';
+$fontNormal: 400;
+$fontSemiBold: 600;
+$fontBold: 700;
+$fontAwesome: 'Font Awesome';
+$baseLineHeight: 1.8;
+$baseFontSize: 0.875rem;
+
+
+
+//////////// susy config
+$susy: (
+	flow: rtl,
+	columns: 12,
+	gutters: 1/4,
+	math: fluid,
+	output: float,
+	gutter-position: after
+);
+
+$mainLayout: layout( 12 1/4 fluid float rtl );
+
+@include border-box-sizing;
+
+////////////// mixins
+@mixin strip-modal {
+	margin:0;
+	padding:0;
+}
+// Mixin itself
+@mixin cfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+@mixin container-shadow {
+	@include box-shadow(0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2));
+}
+@mixin grayScale {
+	-moz-filter: grayscale(100%);
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
