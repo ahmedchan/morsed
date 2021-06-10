@@ -8,7 +8,7 @@ var rename       = require( 'gulp-rename' );
 var uglify       = require('gulp-uglify');
 
 
-var output = '_assets/'
+var output = 'assets/'
 var sassSources = ['src/sass/style.scss'];
 var jsSources = [
 	'src/scripts/popper.js',
@@ -27,10 +27,10 @@ gulp.task('compass', function(){
 	gulp.src(sassSources)
 		.pipe(compass({
 			sass: 'src/sass',
-			images: '_assets/img',
+			images: 'assets/img',
 			style: 'compressed',
 			sourcemap: true,
-			css: '_assets/css',
+			css: 'assets/css',
 			require: ['susy', 'breakpoint']
 		}))
 		.pipe(gulp.dest(output + 'css'))
